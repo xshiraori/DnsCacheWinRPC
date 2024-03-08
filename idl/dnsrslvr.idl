@@ -1,0 +1,20 @@
+[
+	uuid(45776b01-5956-4485-9f80-f428f7d60129),
+	version(2.0),
+]
+interface DefaultIfName
+{
+	typedef struct DNS_CACHE_ENTRY DNS_CACHE_ENTRY, *PDNS_CACHE_ENTRY;
+
+	struct DNS_CACHE_ENTRY {
+		DNS_CACHE_ENTRY* Next; // Pointer to next entry
+		[string] wchar_t* Name; // DNS Record Name
+		unsigned short Type; // DNS Record Type
+		unsigned short Unused; // Not referenced
+		unsigned long Flags; // DNS Record Flags
+	};
+
+	__int64 R_ReadCache(
+		[in]__int64 arg_1,
+		[out][ref]struct DNS_CACHE_ENTRY** arg_2);
+}
