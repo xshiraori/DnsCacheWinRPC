@@ -1,6 +1,4 @@
 # DnsCacheWinRPC
-Retrieving DNS Cache Table by making RPC calls [POC]
-
 List the DNS Cache entries by directly making the RPC call. Other alternative is to use dnsapi!DnsGetCacheDataTable which will eventually call the same RPC for you.
 
 There are couple of other RPCs available on the same provider:
